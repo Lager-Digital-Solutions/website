@@ -257,7 +257,8 @@
             slidesToScroll: 1,
             adaptiveHeight: true,
             pauseOnFocus: false,
-            autoplaySpeed: 1500,
+            autoplay: true, 
+            autoplaySpeed: 3000,
             responsive: [
                 {
                     breakpoint: 900,
