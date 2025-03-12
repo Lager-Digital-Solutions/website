@@ -279,183 +279,156 @@
         </div> <!-- end intro-wrap -->
 
         <div class="row works-content">
-            <div class="col-full masonry-wrap">
-                <div class="masonry">
-    
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                                
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/elegance_studio@2x.jpg" class="thumb-link" title="Shutterbug" data-size="1050x700">
-                                    <img src="images/portfolio/elegance_studio.jpg" 
-                                         srcset="images/portfolio/elegance_studio.jpg 1x, images/portfolio/elegance_studio@2x.jpg 2x" alt="">
-                                </a>
-                            </div>
-    
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    <a href="https://www.elegancepic.com/" style="color: #fff">Elegance Studio</a>
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Full Stack Website
-                                </p>
-                            </div>
-    
-                            
-    
-                            <div class="item-folio__caption">
-                                <p>Elegance Studio is a professional and polished digital space for photography.</p>
-                            </div>
-    
-                        </div>
-                    </div> <!-- end masonry__brick -->
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                                
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-lager.jpg" class="thumb-link" title="Woodcraft" data-size="1050x700">
-                                    <img src="images/portfolio/lager.jpg" 
-                                         srcset="images/portfolio/lager.jpg 1x, images/portfolio/lager.jpg 2x" alt="">
-                                </a>
-                            </div>
-    
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    <a href="https://www.lagerhomes.com/" style="color: #fff">Lager Homes</a>
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Property rental platform
-                                </p>
-                            </div>
-    
-                            
-    
-                            <div class="item-folio__caption">
-                                <p>Lager Homes is a modern blend of convenience, security, and sophistication in the property rental space.</p>
-                            </div>
-    
-                        </div>
-                    </div> <!-- end masonry__brick -->
-    
-                    <!-- <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                                
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-beetle.jpg" class="thumb-link" title="The Beetle Car" data-size="1050x700">
-                                    <img src="images/portfolio/the-beetle.jpg"
-                                         srcset="images/portfolio/the-beetle.jpg 1x, images/portfolio/the-beetle@2x.jpg 2x" alt="">
-                                </a>
-                            </div>
-    
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    The Beetle
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Development
-                                </p>
-                            </div>
-    
-                            
-    
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-    
-                        </div>
-                    </div> 
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+                .portfolio-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                    gap: 3rem;
+                    padding: 3rem;
+                }
+        
+                .portfolio-item {
+                    position: relative;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+                    transition: all 0.3s ease;
+                    aspect-ratio: 16/9;
+                    background: #fff;
+                }
+        
+                .portfolio-item:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+                }
+        
+                .portfolio-image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: all 0.5s ease;
+                }
+        
+                .portfolio-overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    background: linear-gradient(
+                        to top,
+                        rgba(0, 0, 0, 0.95) 0%,
+                        rgba(0, 0, 0, 0.8) 50%,
+                        transparent 100%
+                    );
+                    padding: 3rem;
+                    color: white;
+                    transform: translateY(100%);
+                    transition: transform 0.5s ease;
+                    font-family: 'Poppins', sans-serif;
+                }
+        
+                .portfolio-item:hover .portfolio-overlay {
+                    transform: translateY(0);
+                }
+        
+                .portfolio-item:hover .portfolio-image {
+                    transform: scale(1.1);
+                }
+        
+                .portfolio-title {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    margin-bottom: 0.75rem;
+                    font-family: 'Poppins', sans-serif;
+                    color: aliceblue;
+                }
+        
+                .portfolio-category {
+                    font-size: 2.25rem;
+                    opacity: 0.8;
+                    margin-bottom: 1.25rem;
+                    font-weight: 400;
+                    font-family: 'Poppins', sans-serif;
+                }
+        
+                .portfolio-description {
+                    font-size: 1.8rem;
+                    line-height: 1.6;
+                    opacity: 0.9;
+                    font-weight: 300;
+                    font-family: 'Poppins', sans-serif;
+                }
+        
+                .portfolio-link {
+                    color: white;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+        
+                .portfolio-link:hover {
+                    color: #39b54a;
+                }
+        
+                @media (max-width: 768px) {
+                    .portfolio-grid {
+                        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                        padding: 1.5rem;
+                        gap: 2rem;
+                    }
                     
-    
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                                
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-grow-green.jpg" class="thumb-link" title="Grow Green" data-size="1050x700">
-                                    <img src="images/portfolio/grow-green.jpg" 
-                                         srcset="images/portfolio/grow-green.jpg 1x, images/portfolio/grow-green@2x.jpg 2x" alt="">
-                                </a>
-                            </div>
-    
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Grow Green
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Branding
-                                </p>
-                            </div>
-    
-                            
-    
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-    
-                        </div>
-                    </div> 
-                    
-
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                                
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-guitarist.jpg" class="thumb-link" title="Guitarist" data-size="1050x700">
-                                    <img src="images/portfolio/guitarist.jpg" 
-                                         srcset="images/portfolio/guitarist.jpg 1x, images/portfolio/guitarist@2x.jpg 2x" alt="">
-                                </a>
-                            </div>
-    
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Guitarist
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Design
-                                </p>
-                            </div>
-    
-                                
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-    
-                        </div>
-                    </div> 
-                    
-    
-                    <div class="masonry__brick" data-aos="fade-up">
-                        <div class="item-folio">
-                                
-                            <div class="item-folio__thumb">
-                                <a href="images/portfolio/gallery/g-palmeira.jpg" class="thumb-link" title="Palmeira" data-size="1050x700">
-                                    <img src="images/portfolio/palmeira.jpg"
-                                         srcset="images/portfolio/palmeira.jpg 1x, images/portfolio/palmeira@2x.jpg 2x" alt="">
-                                </a>
-                            </div>
-    
-                            <div class="item-folio__text">
-                                <h3 class="item-folio__title">
-                                    Palmeira
-                                </h3>
-                                <p class="item-folio__cat">
-                                    Web Design
-                                </p>
-                            </div>
-    
-                        
-    
-                            <div class="item-folio__caption">
-                                <p>Vero molestiae sed aut natus excepturi. Et tempora numquam. Temporibus iusto quo.Unde dolorem corrupti neque nisi.</p>
-                            </div>
-    
-                        </div>
-                    </div>  -->
-                    
-
-                </div> <!-- end masonry -->
-            </div> <!-- end col-full -->
-        </div> <!-- end works-content -->
+                    .portfolio-overlay {
+                        padding: 2rem;
+                    }
+        
+                    .portfolio-title {
+                        font-size: 3rem;
+                    }
+        
+                    .portfolio-category {
+                        font-size: 1.1rem;
+                    }
+        
+                    .portfolio-description {
+                        font-size: 1rem;
+                    }
+                }
+            </style>
+        
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-aos="fade-up">
+                    <img src="images/portfolio/elegance_studio.jpg" 
+                         alt="Elegance Studio" 
+                         class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <a href="https://www.elegancepic.com/" class="portfolio-link">
+                            <h3 class="portfolio-title">Elegance Studio</h3>
+                        </a>
+                        <p class="portfolio-category">Full Stack Website</p>
+                        <p class="portfolio-description">
+                            Elegance Studio is a professional and polished digital space for photography.
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/portfolio/lager.jpg" 
+                         alt="Lager Homes" 
+                         class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <a href="https://www.lagerhomes.com/" class="portfolio-link">
+                            <h3 class="portfolio-title">Lager Homes</h3>
+                        </a>
+                        <p class="portfolio-category">Property Rental Platform</p>
+                        <p class="portfolio-description">
+                            Lager Homes is a modern blend of convenience, security, and sophistication in the property rental space.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end works-content -->
 
     </section> <!-- end s-works -->
 
@@ -502,44 +475,135 @@
         <div class="row clients-testimonials" data-aos="fade-up">
             <div class="col-full">
                 <div class="testimonials">
-        
                     <div class="testimonials__slide">
-        
-                        <p>"At Lager, we’re not just building software—we’re shaping the future of digital innovation. Every project is a step towards something bigger."</p>
-        
-                        <img src="images/avatars/biruk.jpg" alt="Biruk Kefiyalew" class="testimonials__avatar">
-                        <div class="testimonials__info">
-                            <span class="testimonials__name">Biruk Kefiyalew</span> 
-                            <span class="testimonials__pos">Owner & Founder</span>
+                        <div class="testimonial-content">
+                            <p>"At Lager, we're not just building software—we're shaping the future of digital innovation. Every project is a step towards something bigger."</p>
+                            
+                            <div class="avatar-wrapper">
+                                <div class="avatar-ring">
+                                    <img src="images/avatars/biruk.jpg" alt="Biruk Kefiyalew" class="testimonials__avatar">
+                                </div>
+                            </div>
+                            
+                            <div class="testimonials__info">
+                                <span class="testimonials__name">Biruk Kefiyalew</span> 
+                                <span class="testimonials__pos">Owner & Founder</span>
+                            </div>
                         </div>
-        
                     </div>
-        
+                
                     <div class="testimonials__slide">
-                        
-                        <p>"Our goal is to craft seamless, scalable, and efficient solutions that make businesses run smarter. Technology should work for you, not the other way around."</p>
-        
-                        <img src="images/avatars/nahom.jpg" alt="Nahom Haileselassie" class="testimonials__avatar">
-                        <div class="testimonials__info">
-                            <span class="testimonials__name">Nahom Haileselassie</span> 
-                            <span class="testimonials__pos">CEO & Co-Founder</span>
+                        <div class="testimonial-content">
+                            <p>"Our goal is to craft seamless, scalable, and efficient solutions that make businesses run smarter. Technology should work for you, not the other way around."</p>
+                            
+                            <div class="avatar-wrapper">
+                                <div class="avatar-ring">
+                                    <img src="images/avatars/nahom.jpg" alt="Nahom Haileselassie" class="testimonials__avatar">
+                                </div>
+                            </div>
+                            
+                            <div class="testimonials__info">
+                                <span class="testimonials__name">Nahom Haileselassie</span> 
+                                <span class="testimonials__pos">CEO & Co-Founder</span>
+                            </div>
                         </div>
-        
                     </div>
-        
+                
                     <div class="testimonials__slide">
-                        
-                        <p>"We focus on building scalable and reliable technology, ensuring that every solution we create is future-proof and delivers maximum impact."</p>
-        
-                        <img src="images/avatars/sudo.jpg" alt="Nahom Habtamu" class="testimonials__avatar">
-                        <div class="testimonials__info">
-                            <span class="testimonials__name">Nahom Habtamu</span> 
-                            <span class="testimonials__pos">CTO</span>
+                        <div class="testimonial-content">
+                            <p>"We focus on building scalable and reliable technology, ensuring that every solution we create is future-proof and delivers maximum impact."</p>
+                            
+                            <div class="avatar-wrapper">
+                                <div class="avatar-ring">
+                                    <img src="images/avatars/sudo.jpg" alt="Nahom Habtamu" class="testimonials__avatar">
+                                </div>
+                            </div>
+                            
+                            <div class="testimonials__info">
+                                <span class="testimonials__name">Nahom Habtamu</span> 
+                                <span class="testimonials__pos">CTO</span>
+                            </div>
                         </div>
-        
                     </div>
-        
                 </div>
+                
+                <style>
+                .testimonial-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 2rem;
+                }
+                
+                .avatar-wrapper {
+                    margin: 2rem 0;
+                    position: relative;
+                    display: inline-block;
+                }
+                
+                /* .avatar-ring {
+                    position: relative;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    padding: 5px;
+                    background: linear-gradient(to right, #39b54a, #2d8e3a);
+                    box-shadow: 0 0 20px rgba(57, 181, 74, 0.3);
+                } */
+                
+                .testimonials__avatar {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 4px solid #2e8d3b;
+                }
+                
+                .testimonials__info {
+                    text-align: center;
+                }
+                
+                .testimonials__name {
+                    display: block;
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    margin-bottom: 0.3rem;
+                }
+                
+                .testimonials__pos {
+                    display: block;
+                    font-size: 1.4rem;
+                    color: #39b54a;
+                }
+                
+                .testimonials p {
+                    font-size: 1.8rem;
+                    line-height: 1.8;
+                    margin-bottom: 2rem;
+                    font-style: italic;
+                    max-width: 800px;
+                }
+                
+                @media screen and (max-width: 768px) {
+                    .avatar-ring {
+                        width: 120px;
+                        height: 120px;
+                    }
+                
+                    .testimonials p {
+                        font-size: 1.6rem;
+                    }
+                
+                    .testimonials__name {
+                        font-size: 1.6rem;
+                    }
+                
+                    .testimonials__pos {
+                        font-size: 1.2rem;
+                    }
+                }
+                </style>
                 <!-- end testimonials -->
                 
             </div> <!-- end col-full -->
