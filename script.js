@@ -1,3 +1,26 @@
+// Load Lottie library
+const lottieScript = document.createElement('script');
+lottieScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+document.head.appendChild(lottieScript);
+
+lottieScript.onload = function() {
+  // Initialize Lottie animation
+  const animation = lottie.loadAnimation({
+    container: document.getElementById('lottie-container'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'lager_loading.json'
+  });
+};
+
+// Hide loading screen when everything is loaded
+window.addEventListener('load', function() {
+  setTimeout(() => {
+    document.getElementById('loading-overlay').classList.add('hidden');
+  }, 3000); // Show loading animation for 3 seconds after page loads
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   // Set current year in footer
   document.getElementById('current-year').textContent = new Date().getFullYear();
