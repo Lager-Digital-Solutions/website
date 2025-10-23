@@ -11,7 +11,7 @@ lottieScript.onload = function() {
     loop: true,
     autoplay: true,
     path: 'lager_loading.json'
-  });
+  }); 
 };
 
 // Hide loading screen when everything is loaded
@@ -55,6 +55,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update the "View Live Project" button link based on portfolio card's data-live-url attribute
     liveProjectLink.setAttribute('href', liveUrl);
+
+    // Store badges: only show for Lager Homes
+const playstoreLink = portfolioModal.querySelector('#playstore-link');
+const appstoreLink = portfolioModal.querySelector('#appstore-link');
+
+if (title === "Lager Homes") {
+  playstoreLink.style.display = "inline-block";
+  appstoreLink.style.display = "inline-block";
+} else {
+  playstoreLink.style.display = "none";
+  appstoreLink.style.display = "none";
+}
+
+
 
     // Client
     if (client) {

@@ -1596,3 +1596,49 @@
     animation: slideInLeft 0.5s ease-out forwards;
   }
   
+/* Modal footer: live link on left, badges on right */
+.modal-footer {
+  display: flex;
+  justify-content: space-between; /* pushes badges to the other side */
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* neat wrap on small screens */
+}
+
+/* Store badges group */
+.store-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto; /* ensures it hugs the right side */
+}
+
+/* Individual badge links */
+.btn-store {
+  display: none; /* hidden by default, shown for Lager Homes via JS */
+  transition: transform 0.2s ease;
+}
+
+.btn-store:hover { transform: scale(1.05); }
+
+/* Badge image sizing */
+.btn-store img {
+  height: 40px;
+  display: block;
+}
+
+/* Mobile stacking */
+@media (max-width: 640px) {
+  .modal-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .store-badges {
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .btn-store img {
+    height: 36px;
+  }
+}
+
