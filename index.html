@@ -30,6 +30,7 @@
           <a href="#services" class="nav-link">Services</a>
           <a href="#portfolio" class="nav-link">Portfolio</a>
           <a href="#team" class="nav-link">Team</a>
+          <a href="#" class="nav-link open-positions-link">Careers</a>
           <a href="#pricing" class="nav-link">Pricing</a>
         </nav>
         <div class="desktop-cta">
@@ -51,9 +52,9 @@
         <i class="fas fa-images"></i>
         <span>Projects</span>
       </a>
-      <a href="#team" class="mobile-nav-item">
-        <i class="fas fa-users"></i>
-        <span>Team</span>
+      <a href="#" class="mobile-nav-item open-positions-link">
+        <i class="fas fa-briefcase"></i>
+        <span>Careers</span>
       </a>
       <a href="#contact-sales" class="mobile-nav-item">
         <i class="fas fa-paper-plane"></i>
@@ -521,7 +522,7 @@
             </button>
           </div>
         </div>
-        <div class="join-team">
+        <!-- <div class="join-team">
           <div class="join-team-icon">
             <i class="fas fa-users"></i>
           </div>
@@ -532,7 +533,7 @@
           <a href="#" class="btn btn-primary btn-with-icon">
             View Open Positions <i class="fas fa-arrow-right"></i>
           </a>
-        </div>
+        </div> -->
       </div>
       <div class="section-divider"></div>
     </section>
@@ -911,17 +912,32 @@
       </div>
       <div class="modal-body">
         <ul class="positions-list">
-          <li style="margin-bottom:1.5rem;">
-            <h4>Front-End Developer</h4>
-            <p>Build modern, responsive web applications using React and modern CSS techniques.</p>
+          <li class="position-item">
+            <h4>
+              <a href="#" class="position-link">
+                Front-End Developer
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </h4>
+            <p class="position-description">Build modern, responsive web applications using React and modern CSS techniques.</p>
           </li>
-          <li style="margin-bottom:1.5rem;">
-            <h4>Back-End Developer</h4>
-            <p>Develop scalable server-side applications using Node.js and related frameworks.</p>
+          <li class="position-item">
+            <h4>
+              <a href="#" class="position-link">
+                Back-End Developer
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </h4>
+            <p class="position-description">Develop scalable server-side applications using Node.js and related frameworks.</p>
           </li>
-          <li style="margin-bottom:1.5rem;">
-            <h4>UI/UX Designer</h4>
-            <p>Design intuitive and visually appealing user interfaces for our digital products.</p>
+          <li class="position-item">
+            <h4>
+              <a href="#" class="position-link">
+                UI/UX Designer
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </h4>
+            <p class="position-description">Design intuitive and visually appealing user interfaces for our digital products.</p>
           </li>
         </ul>
       </div>
@@ -988,14 +1004,16 @@
     });
 
     // Open Positions Modal functionality
-    const openPositionsBtn = document.querySelector('.join-team .btn.btn-primary');
+    const openPositionsLinks = document.querySelectorAll('.open-positions-link');
     const openPositionsModal = document.getElementById('open-positions-modal');
     const openPositionsModalClose = openPositionsModal.querySelector('.modal-close');
 
-    openPositionsBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      openPositionsModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
+    openPositionsLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openPositionsModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
     });
 
     openPositionsModalClose.addEventListener('click', function() {

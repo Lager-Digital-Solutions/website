@@ -1526,6 +1526,49 @@
   .modal-body {
     padding: 1.5rem;
   }
+
+  /* Careers Modal Styling */
+  .position-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-card-border);
+  }
+
+  .position-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .position-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-foreground);
+    text-decoration: none;
+    transition: var(--transition);
+    width: 100%;
+  }
+
+  .position-link:hover {
+    color: var(--color-accent);
+  }
+
+  .position-link i {
+    color: var(--color-accent);
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .position-link:hover i {
+    transform: translateX(5px);
+  }
+
+  .position-description {
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
   
   .modal-grid {
     display: grid;
