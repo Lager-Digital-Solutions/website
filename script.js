@@ -406,4 +406,17 @@ if (title === "Lager Homes") {
       document.body.style.overflow = '';
     }
   });
+
+  // Mobile Bottom Nav Active State Logic
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  
+  mobileNavItems.forEach(item => {
+    item.addEventListener('click', function() {
+      // Remove active class from all items
+      mobileNavItems.forEach(nav => nav.classList.remove('active'));
+      // Add active class to clicked item
+      this.classList.add('active');
+    });
+  });
+
 });

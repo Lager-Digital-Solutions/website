@@ -193,9 +193,17 @@
   }
   
   .logo-text {
-    color: var(--color-accent);
+    color: var(--color-foreground);
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    margin-left: 0.75rem;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .logo-text {
+      display: none;
+    }
   }
   
   .nav-links {
@@ -218,7 +226,146 @@
       gap: 2rem;
     }
   }
+
+  /* Mobile Bottom Navigation Styles */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--color-card-border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.75rem 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    transition: var(--transition);
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .mobile-nav-item i {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+  }
+
+  .mobile-nav-item:hover,
+  .mobile-nav-item.active {
+    color: var(--color-accent);
+  }
+
+  .mobile-nav-item.active i {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+  }
+
+  /* Hide "Get Started" button on mobile header */
+  .desktop-cta {
+    display: none;
+  }
+
+  /* Add padding to body on mobile so content isn't hidden behind the bar */
+  body {
+    padding-bottom: 5rem; 
+  }
+
+  /* Desktop Adjustments: Hide bottom nav, show CTA, reset padding */
+  @media (min-width: 768px) {
+    .mobile-bottom-nav {
+      display: none;
+    }
+
+    .desktop-cta {
+      display: block;
+    }
+
+    body {
+      padding-bottom: 0;
+    }
+  }
   
+  /* Mobile Bottom Navigation */
+  .mobile-bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(17, 24, 39, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--color-card-border);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.75rem 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    transition: var(--transition);
+    text-decoration: none;
+    flex: 1; /* Ensure equal tap targets */
+  }
+
+  .mobile-nav-item i {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+  }
+
+  .mobile-nav-item:hover,
+  .mobile-nav-item.active {
+    color: var(--color-accent);
+  }
+
+  .mobile-nav-item.active i {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+  }
+
+  /* Hide "Get Started" button on mobile header to save space */
+  .desktop-cta {
+    display: none;
+  }
+
+  /* Add padding to body on mobile so content isn't hidden behind the bar */
+  body {
+    padding-bottom: 4rem; 
+  }
+
+  @media (min-width: 768px) {
+    /* Hide bottom nav on desktop */
+    .mobile-bottom-nav {
+      display: none;
+    }
+
+    /* Show CTA on desktop */
+    .desktop-cta {
+      display: block;
+    }
+
+    /* Remove bottom padding on desktop */
+    body {
+      padding-bottom: 0;
+    }
+  }
   /* Hero Section */
   .hero-section {
     padding-top: 8rem;
