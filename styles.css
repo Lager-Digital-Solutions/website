@@ -1455,8 +1455,9 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.75);
-    z-index: 100;
+    z-index: 2000; /* Increased to be above mobile nav (1000) */
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
     padding: 2rem 1rem;
   }
   
